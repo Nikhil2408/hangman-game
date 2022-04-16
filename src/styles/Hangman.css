@@ -1,0 +1,36 @@
+.Hangman{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    height: 115vh;
+}
+
+.Hangman-img{
+    height: 300px;
+}
+
+.Hangman-wrongNum{
+    font-size: 1.1rem;
+}
+
+.Hangman-currentGuess{
+    font-size: 1.2rem;
+}
+
+.Hangman-wonMsg{
+    color: rgb(21, 207, 21);
+    font-size: 1.1rem;
+}
+
+.Hangman-loseMsg{
+    color: red;
+    font-size: 1.1rem;
+}
+
+.Hangman-reset{
+    margin: 1rem;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+}

@@ -1,0 +1,20 @@
+.AlphaButtons{
+    display: flex;
+    
+}
+
+.AlphaButtons-btn{
+    border: none;
+    background-color: salmon;
+    height: 35px;
+    width: 35px;
+    margin: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+.AlphaButtons-btn:hover{
+    background-color: rgb(219, 104, 92);
+    cursor: pointer;
+}
