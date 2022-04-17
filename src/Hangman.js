@@ -7,8 +7,10 @@ import img4 from "./img/4.jpg";
 import img5 from "./img/5.jpg";
 import img6 from "./img/6.jpg";
 import AlphaButtons from "./AlphaButtons";
+import {randomWord} from "./words";
 import "./styles/Hangman.css"
 import "./styles/AlphaButtons.css"
+
 
 
 class Hangman extends Component{
@@ -22,7 +24,7 @@ class Hangman extends Component{
         this.state = {
             wrongNum: 0,
             guessedWordSet: new Set(),
-            correctAnswer: "apple",
+            correctAnswer: randomWord(),
             won: false
         }
         this.click = this.click.bind(this);
@@ -31,7 +33,7 @@ class Hangman extends Component{
 
     currentGuessedWord(){
         let guessedWord = this.state.correctAnswer.split("").map(letter => {
-            return this.state.guessedWordSet.has(letter) ? letter : "_";
+            return this.state.guessedWordSet.has(letter) ? letter : "_ ";
         });
         return guessedWord;
     }
@@ -53,7 +55,7 @@ class Hangman extends Component{
             return {
                 wrongNum: 0,
                 guessedWordSet: new Set(),
-                correctAnswer: "apple",
+                correctAnswer: randomWord(),
                 won: false
             }
         });
@@ -69,7 +71,7 @@ class Hangman extends Component{
                 {
                     this.state.wrongNum < this.props.maxGuesses ? 
                     (this.state.won ? <p className="Hangman-wonMsg">Congrats! You won the game</p> : <AlphaButtons className="AlphaButtons" click = {this.click}/>) : 
-                    <p className = "Hangman-loseMsg">You have lost the game</p>
+                    <p className = "Hangman-loseMsg">You have lost the game. The correct answer was {this.state.correctAnswer}</p>
                 }
                 <button className="Hangman-reset" onClick = {this.reset}>Restart the game?</button>
             </div>

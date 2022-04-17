@@ -5,7 +5,7 @@ class AlphaButtons extends Component{
 
     generateAlphaButtons(){
         let buttons = "abcdefghijklmnopqrstuvwxyz".split("").map(alpha => {
-            return <button class="AlphaButtons-btn" key = {alpha} value = {alpha} onClick={this.props.click}>
+            return <button className="AlphaButtons-btn" key = {alpha} value = {alpha} onClick={this.props.click}>
                         {alpha}
                    </button>
         });
